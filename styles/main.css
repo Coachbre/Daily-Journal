@@ -3,3 +3,8 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.journalEntry {
+
+    border: dotted;
+}

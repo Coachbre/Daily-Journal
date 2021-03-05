@@ -6,18 +6,6 @@
  *      the entries for different purposes.
  */
 
-/*
-    You export a function that provides a version of the
-    raw data in the format that you want
-*/
-export const getJournalEntries = () => {
-    const sortedByDate = journal.sort(
-        (currentEntry, nextEntry) =>
-            Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
-    )
-    return sortedByDate
-}
-
 // This is the original data.
 const journal = [
     {
@@ -31,9 +19,29 @@ const journal = [
     {
         id: 2,
         date: "07/26/2025",
-        concept: "Complex Flexbox",
+        concept: "bye Flexbox",
+        entry: "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
+        mood: "Sad"
+    },
+
+    {
+        id: 3,
+        date: "07/28/2025",
+        concept: "hey Flexbox",
         entry: "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
         mood: "Sad"
     }
 ]
+
+/*
+    You export a function that provides a version of the
+    raw data in the format that you want
+*/
+export const getJournalEntries = () => {
+    const sortedByDate = journal.sort(
+        (currentEntry, nextEntry) =>
+            Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
+    )
+    return sortedByDate
+}
 
