@@ -1,14 +1,39 @@
+/*
+ *  Purpose:
+ *    To render as many journal entry components as
+ *    there are items in the collection exposed by the
+ *    data module component
+ */
+import { getEntries } from "../data/DataManager.js"
+import { JournalEntryComponent } from "./journalEntry.js"
 
-import { Entry} from "./Entry.js"
+// DOM reference to where all entries will be rendered
+const entryLog = document.querySelector(".entryLog")
 
+export const EntryListComponent = () => {
+    console.log("hello");
+    // Use the journal entry data from the data module component
+     getEntries()
+     .then(entries => {
 
+        console.log(entries);
 
-export const EntryList = (allEntries) => {
-  
-    let entryHTML = "";
+        let entryHTMLRepresentations = "";
+        for (const entry of entries) {
+            entryHTMLRepresentations += JournalEntryComponent(entry);
+    
+       
+        }
+        entryLog.innerHTML += entryHTMLRepresentations;
+     })
 
-    for (const entryObj of allEntries) {
-        entryHTML += Entry(entryObj);
-    }
-    return entryHTML;
+    // console.log(entries);
+
+    // let entryHTMLRepresentations = "";
+    // for (const entry of entries) {
+    //     entryHTMLRepresentations += JournalEntryComponent(entry);
+
+   
+    // }
+    // entryLog.innerHTML += entryHTMLRepresentations;
 }
