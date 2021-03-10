@@ -11,7 +11,7 @@ const journal = [
     {
         id: 1,
         date: "07/24/2025",
-        concept: "HTML & CSS",
+        concepts: "HTML & CSS",
         entry: "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
         mood: "Ok"
     },
@@ -19,7 +19,7 @@ const journal = [
     {
         id: 2,
         date: "07/26/2025",
-        concept: "bye Flexbox",
+        concepts: "bye Flexbox",
         entry: "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
         mood: "Sad"
     },
@@ -27,7 +27,7 @@ const journal = [
     {
         id: 3,
         date: "07/28/2025",
-        concept: "hey Flexbox",
+        concepts: "hey Flexbox",
         entry: "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
         mood: "Sad"
     }
