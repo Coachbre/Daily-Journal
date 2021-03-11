@@ -1,5 +1,8 @@
 import { getEntries } from "./data/DataManager.js"
 import { EntryListComponent } from "./feed/journalEntryList.js"
+import { listSorter } from "./feed/listSorter.js"
+
+const applicationElement = document.querySelector(".dailyJournal");
 
 
 // shows journal entry logs in list form
@@ -14,12 +17,16 @@ const showEntryList = () => {
 
 // event listener- list sort (by month)
 applicationElement.addEventListener("change", event => {
-    if (event.target.id === "yearSelection") {
-      const yearAsNumber = parseInt(event.target.value)
+    if (event.target.id === "monthSelection") {
+      const monthAsNumber = parseInt(event.target.value)
   
-      console.log(`User wants to see posts since ${yearAsNumber}`)
+
+      listSorter(monthAsNumber);
     }
   })
+
+
+  
 
 
 
@@ -30,6 +37,7 @@ applicationElement.addEventListener("change", event => {
 // Runnn
 const startJournal = () => {
     showEntryList();
+ 
 
 }
 
