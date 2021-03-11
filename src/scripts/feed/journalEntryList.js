@@ -11,7 +11,7 @@ import { JournalEntryComponent } from "./journalEntry.js"
 const entryLog = document.querySelector(".entryLog")
 
 export const EntryListComponent = () => {
-    console.log("hello");
+   
     // Use the journal entry data from the data module component
      getEntries()
      .then(entries => {
